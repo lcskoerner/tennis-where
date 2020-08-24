@@ -1,7 +1,7 @@
 class TennisCourtsController < ApplicationController
-  def index
-    @tennis_courts = Tennis_court.all
-  end
+  # def index
+  #   @tennis_courts = Tennis_court.all
+  # end
 
   def new
     @tennis_court = Tennis_court.new
