@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'pages#index'
+  root to: 'tennis_courts#index'
   resources :tennis_courts
 end
