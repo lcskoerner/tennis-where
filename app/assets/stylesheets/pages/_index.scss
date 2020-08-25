@@ -5,7 +5,34 @@
   text-align: center;
 }
 
-.header {
-  width: 80%;
-  margin: 0 auto;
+.container-cards{
+  margin-top: 100px;
 }
+
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+  justify-content: center;
+}
+
+.card{
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.card-text {
+  font-size: 8px;
+}
+
+.card-title{
+  font-size: 16px
+}
+
+.card-img-top{
+}
+
