@@ -27,7 +27,7 @@ puts 'creating 10 fake tennis courts...'
   tennis_court = TennisCourt.new(
     name: Faker::Company.name,
     address: Faker::Address.street_address,
-    price_per_hour: rand(10..200),
+    price_per_hour: rand(10..20),
     detail: Faker::Lorem.paragraph(sentence_count: 2),
     user_id: owner.id
   )
