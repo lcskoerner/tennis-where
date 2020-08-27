@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TennisWhere</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+  </head>
+
+  <body>
+    <%= render 'shared/flashes' %>
+    <div class="container mt-5" style="max-width: 28rem;">
+      <div class="card p-5">
+        <h1 class="card-title">TennisWhere</h1>
+        <div class="mt-1 mb-5">
+          <%= image_tag "logo.png", alt: "TennisWhere", width: 120, class: "justify-content-center" %>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
