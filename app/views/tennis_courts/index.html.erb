@@ -6,7 +6,7 @@
 <body>
 
   <%# SEARCHBAR %>
-  <div class="container">
+  <div class="container mb-4 mt-4">
     <h1> Tennis Where</h1>
     <h3>Find & Book your Tennis Court</h3>
     <div class="md-form md-outline input-with-post-icon datepicker">
@@ -14,94 +14,7 @@
     </div>
   </div>
 
-  <%# CARDS %>
-  <div class="container-cards">
-    <div class="flex-container">
+  <%= render 'cards' %>
 
-      <div class ="cards">
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Court NDG</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Court Mt-Royal</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Court Ville-Marie</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Court Angrignon</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Court Peel</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Cours St-Henri</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="button">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Cours Verdun</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
-          <div class="card-infos">
-            <div>
-              <h2>Cours Mt-Royal</h2>
-              <p>Short description here!</p>
-            </div>
-            <a href="#" class="btn btn-primary">Book it!</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </body>
 </html>
