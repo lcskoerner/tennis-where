@@ -13,8 +13,14 @@
 
   <body>
     <%= render 'shared/flashes' %>
-    <div class="container">
-      <%= yield %>
+    <div class="container mt-5" style="max-width: 28rem;">
+      <div class="card p-5">
+        <h1 class="card-title">TennisWhere</h1>
+        <div class="mt-1 mb-5">
+          <%= image_tag "logo.png", alt: "TennisWhere", width: 120, class: "justify-content-center" %>
+        </div>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
