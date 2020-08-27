@@ -4,6 +4,8 @@
   <title>Tennis Where</title>
 </head>
 <body>
+
+  <%# SEARCHBAR %>
   <div class="container">
     <h1> Tennis Where</h1>
     <h3>Find & Book your Tennis Court</h3>
@@ -11,72 +13,94 @@
       <input placeholder="Select date" type="date" id="example" class="form-control">
     </div>
   </div>
+
+  <%# CARDS %>
   <div class="container-cards">
     <div class="flex-container">
-      <div class="card" id="tennis-card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis 13</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
+
+      <div class ="cards">
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Court NDG</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Court Mt-Royal</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Court Ville-Marie</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Court Angrignon</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Court Peel</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Cours St-Henri</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="button">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Cours Verdun</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
+        </div>
+        <div class="card">
+          <%= image_tag "tennis_hp.jpg", alt: "Tennis court image"%>
+          <div class="card-infos">
+            <div>
+              <h2>Cours Mt-Royal</h2>
+              <p>Short description here!</p>
+            </div>
+            <a href="#" class="btn btn-primary">Book it!</a>
+          </div>
         </div>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis Montreal</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis Outremont</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis NDG</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis 13</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis Montreal</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis Outremont</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="..." alt="">
-        <div class="card-body">
-          <h5 class="card-title">Tennis NDG</h5>
-          <p class="card-text">foredmkd enj vro vo frpo por po pov rp vrpnrp pr p.</p>
-          <a href="#" class="btn btn-primary">Book it!</a>
-        </div>
-      </div>
+
     </div>
   </div>
 </body>
