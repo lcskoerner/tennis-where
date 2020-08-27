@@ -6,7 +6,7 @@
 <body>
 
   <%# SEARCHBAR %>
-  <div class="container">
+  <div class="container mb-5 mt-5">
     <h1> Tennis Where</h1>
     <h3>Find & Book your Tennis Court</h3>
     <div class="md-form md-outline input-with-post-icon datepicker">
@@ -14,57 +14,7 @@
     </div>
   </div>
 
-  <div class="cards">
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-
-  </div>
+  <%= render 'cards' %>
 
 </body>
 </html>
