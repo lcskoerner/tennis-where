@@ -1,4 +1,6 @@
 class TennisCourtsController < ApplicationController
+
+   # GET "tennis_courts"
   # def index
   #   @tennis_courts = Tennis_court.all
   # end
