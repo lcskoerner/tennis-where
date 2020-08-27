@@ -1,12 +1,13 @@
 <div class="cards">
-    <div class="card">
-      <%= @tennis_courts.each do |t| %>
+    <% @tennis_courts.each do |t| %>
+      <div class="card mb-2">
         <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
         <div class="card-body">
           <h5 class="card-title"><strong><%= t.name %></strong></h5>
           <p class="card-text"><%= t.address %></p>
+          <p class="card-text">$ <%= t.price_per_hour %></p>
           <a href="#" class="btn btn-primary">Book now</a>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
