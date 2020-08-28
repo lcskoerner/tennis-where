@@ -6,6 +6,13 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #f05f43;
+  }
 }
 
 .footer-links a {
@@ -14,4 +21,9 @@
 }
 
 .footer-links a:hover {
+}
+
+.separator {
+  color: #ee6f57;
+  font-size: 12px;
 }
