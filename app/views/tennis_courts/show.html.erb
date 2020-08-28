@@ -1,0 +1,13 @@
+<h1>TennisWhere</h1>
+
+<div class="card mb-3">
+<%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
+    <p class="card-text"><%= @tennis_court.address %></p>
+    <p class="card-text"><small class="text-muted"><%= @tennis_court.detail %></small></p>
+    <p class="btn btn-primary">Check availability</p>
+    <%= render 'calendar' %>
+    <%# <%= link_to "Book now", path to booking page %> 
+  </div>
+</div>
