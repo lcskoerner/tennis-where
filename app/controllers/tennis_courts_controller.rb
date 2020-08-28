@@ -1,15 +1,7 @@
 class TennisCourtsController < ApplicationController
-<<<<<<< HEAD
-
-   # GET "tennis_courts"
-  # def index
-  #   @tennis_courts = Tennis_court.all
-  # end
-=======
   def index
     @tennis_courts = TennisCourt.all
   end
->>>>>>> a973ab3bfe49766fa0a66ee766e90ba4fbacefb0
 
   def new
     @tennis_court = TennisCourt.new
