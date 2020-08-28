@@ -1,14 +1,19 @@
- <%= form_tag tennis_court_bookings_path, method: :get do %>
-  <%= date_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a spot"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="card mt-5">
+  <div class="card-body">
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-sm-8 text-center">
+            <h3 class="card-title">Select your slot:</h3>
+            <div class="d-flex flex-wrap justify-content-center pt-4">
+              <% @slots.each do |slot| %>
+                <div class="slot">
+                  <%= slot %>h - <%= slot + 1 %>h
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
-<ul>
-  <% @bookings.each do |b| %>
-    <li><%= b.start_hour %></li>
-  <% end %>
-</ul>
