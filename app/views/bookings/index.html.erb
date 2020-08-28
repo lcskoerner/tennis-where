@@ -1,0 +1,14 @@
+ <%= form_tag tennis_court_bookings_path, method: :get do %>
+  <%= date_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a spot"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<ul>
+  <% @bookings.each do |b| %>
+    <li><%= b.start_hour %></li>
+  <% end %>
+</ul>
