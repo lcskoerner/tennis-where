@@ -1,27 +1,27 @@
 .footer {
-    padding: 58px 0;
+    padding: 28px 0;
     color: black;
     background-color: rgb(224, 217, 217);
-    
+
   }
-  
+
   .footer-container.container::before,
   .footer-container.container::after {
-    display: none;
+  display: none;
   }
-  
+
   .footer-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+
   .footer-link {
     color: inherit;
     text-decoration: none;
     opacity: 0.85;
     transition: opacity .2s ease-in-out;
-  
+
     &:hover {
       opacity: 1;
       color: inherit;
