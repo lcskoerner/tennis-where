@@ -1,50 +1,16 @@
 <div class="cards">
-    <div class="card">
+  <% @tennis_courts.each do |t| %>
+    <div class="card mb-2">
       <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
       <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
+        <h5 class="card-title"><strong><%= t.name %></strong></h5>
+        <p class="card-text"><%= t.address %></p>
+        <p class="card-text"><small class="text-muted"><%= t.detail %></small></p>
+        <div class="d-flex justify-content-between align-items-end">
+          <%= link_to "Book now", tennis_court_path(t), class: "btn btn-primary" %>
+          <h3 class="card-text"><strong>$<%= t.price_per_hour %></strong></h3>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-    <div class="card">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Court NDG</strong></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Book now</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
+ </div>
