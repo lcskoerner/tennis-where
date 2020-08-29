@@ -11,3 +11,30 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+.stars > img {
+  width: 24px;
+  padding-bottom: 5px;
+  padding-right: 2px;
+}
+
+.container-1{
+  display: flex !important;
+  margin-bottom: 12px !important;
+  text-align: left;
+}
+
+.avatar-container-1 > img {
+  align-item: start !important;
+  display: block !important;
+  position: relative !important;
+  border-radius: 50%;
+  width: 20%;
+}
+
+.user-name {
+    text-align: left;
+}
+
+
+
