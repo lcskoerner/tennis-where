@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'tennis_courts#index'
   resources :tennis_courts do
     resources :bookings do
-      resources :reviews only: [ :new, :create]
+      resources :reviews, only: [ :new, :create ]
     end
   end
 end
