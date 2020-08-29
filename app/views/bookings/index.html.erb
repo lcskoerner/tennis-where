@@ -7,7 +7,9 @@
             <div class="d-flex flex-wrap justify-content-center pt-4">
               <% @slots.each do |slot| %>
                 <div class="slot">
-                  <%= slot %>h - <%= slot + 1 %>h
+                  <%= link_to new_tennis_court_booking_path do %>
+                    <%= slot %>h - <%= slot + 1 %>h
+                  <% end %>
                 </div>
               <% end %>
             </div>
