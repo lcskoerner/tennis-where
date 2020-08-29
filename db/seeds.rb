@@ -8,6 +8,7 @@
 #
 
 require 'faker'
+require 'open-uri'
 
 puts "Creating owner"
 owner = User.create(
@@ -23,7 +24,7 @@ owner.save!
 puts 'User owner@tenniscourt.com/123456 created!'
 
 puts 'creating 10 fake tennis courts...'
-10.times do 
+10.times do |t|
   tennis_court = TennisCourt.new(
     name: Faker::Company.name,
     address: Faker::Address.street_address,
@@ -31,7 +32,11 @@ puts 'creating 10 fake tennis courts...'
     detail: Faker::Lorem.paragraph(sentence_count: 2),
     user_id: owner.id
   )
+  file = URI.open('https://source.unsplash.com/collection/12216661/1600x900')
+  tennis_court.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
   tennis_court.save!
+  sleep(10)
+  puts "tennis court #{t + 1} created!"
 end
 
 puts 'seed finished!'
