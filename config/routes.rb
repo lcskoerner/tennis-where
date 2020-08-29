@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, except: :destroy, controllers: { registrations: 'users/registrations'}
   root to: 'tennis_courts#index'
   resources :tennis_courts do
-    resources :bookings
+    resources :bookings do
+      resources :reviews only: [ :new, :create]
+    end
   end
 end
