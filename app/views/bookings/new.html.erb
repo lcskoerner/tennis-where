@@ -14,12 +14,12 @@
             <td><%= @booking.tennis_court.name %></td>
             <td><%= @booking.tennis_court.address %></td>
             <td><%= @booking.date %></td>
-            <td><%= @booking.start_hour %>h</td>
+            <td><%= @booking.start_time %>h</td>
           </tr>
         </tbody>
       </table>
       <%= link_to "Confirm",
-        tennis_court_bookings_path(@booking.tennis_court, :start_hour => @booking.start_hour, :date => @booking.date), method: :post %>
+        tennis_court_bookings_path(@booking.tennis_court, :start_time => @booking.start_time, :date => @booking.date), method: :post %>
     </div>
   </div>
 </div>

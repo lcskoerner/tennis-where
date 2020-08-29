@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     end
 
     all_hours = (8..20).to_a
-    occ_hours = @bookings.map(&:start_hour)
+    occ_hours = @bookings.map(&:start_time)
     @slots = all_hours - occ_hours
     @date = params[:date]
   end
@@ -29,6 +29,6 @@ class BookingsController < ApplicationController
   private
 
   def tennis_court_booking_params
-    params.permit(:start_hour, :tennis_court_id, :date)
+    params.permit(:start_time, :tennis_court_id, :date)
   end
 end
