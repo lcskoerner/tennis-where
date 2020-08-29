@@ -29,7 +29,7 @@ player = User.create(
   password: 123456,
   first_name: "Gustavo",
   last_name: "Kuster",
-  owner: true,
+  owner: false,
   phone_number: 5146997352
 )
 
