@@ -23,6 +23,19 @@ owner = User.create(
 owner.save!
 puts 'User owner@tenniscourt.com/123456 created!'
 
+puts "Creating player"
+player = User.create(
+  email: "player@tenniscourt.com",
+  password: 123456,
+  first_name: "Gustavo",
+  last_name: "Kuster",
+  owner: true,
+  phone_number: 5146997352
+)
+
+player.save!
+puts 'User player@tenniscourt.com/123456 created!'
+
 puts 'creating 10 fake tennis courts...'
 10.times do |t|
   tennis_court = TennisCourt.new(
