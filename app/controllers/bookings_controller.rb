@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    if params[:query].present?
-      @bookings = Booking.where(date: params[:query])
+    if params[:date].present?
+      @bookings = Booking.where(date: params[:date])
     else
       @bookings = Booking.all
     end
@@ -9,5 +9,26 @@ class BookingsController < ApplicationController
     all_hours = (8..20).to_a
     occ_hours = @bookings.map(&:start_hour)
     @slots = all_hours - occ_hours
+    @date = params[:date]
+  end
+
+  def new
+    @booking = Booking.new(tennis_court_booking_params)
+    @booking.user = current_user
+    @date = params[:date]
+  end
+
+  def create
+    @booking = Booking.new(tennis_court_booking_params)
+    @booking.user = current_user
+    @booking.save
+
+    redirect_to tennis_court_path(@booking.tennis_court)
+  end
+
+  private
+
+  def tennis_court_booking_params
+    params.permit(:start_hour, :tennis_court_id, :date)
   end
 end
