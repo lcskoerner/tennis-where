@@ -6,8 +6,18 @@
     <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
     <p class="card-text"><%= @tennis_court.address %></p>
     <p class="card-text"><small class="text-muted"><%= @tennis_court.detail %></small></p>
-    <p class="btn btn-primary">Check availability</p>
-    <%= render 'calendar' %>
-    <%# <%= link_to "Book now", path to booking page %>
+    <%= form_tag tennis_court_bookings_path(@tennis_court), method: :get do %>
+      <div class="d-flex">
+        <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
+        <%= date_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a spot"
+        %>
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
