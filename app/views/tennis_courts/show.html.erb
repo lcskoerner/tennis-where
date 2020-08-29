@@ -1,5 +1,5 @@
 <div class="card mb-3 mt-5">
-<%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
+<%= cl_image_tag @tennis_court.photo.key, crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
     <p class="card-text"><%= @tennis_court.address %></p>

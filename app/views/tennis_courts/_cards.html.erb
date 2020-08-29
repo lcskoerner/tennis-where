@@ -1,7 +1,7 @@
 <div class="cards">
   <% @tennis_courts.each do |t| %>
     <div class="card mb-2">
-      <%= image_tag "tennis_hp.jpg", alt: "Tennis court image", class: "card-image-top" %>
+      <%= cl_image_tag t.photo.key, crop: :fill %>
       <div class="card-body">
         <h5 class="card-title"><strong><%= t.name %></strong></h5>
         <p class="card-text"><%= t.address %></p>
@@ -13,4 +13,4 @@
       </div>
     </div>
   <% end %>
- </div>
+</div>
