@@ -12,7 +12,6 @@ class BookingsController < ApplicationController
     @date = params[:date]
   end
 
-  # user_bookings GET    /user_bookings(.:format)  bookings#user_index
   def user_index
     @bookings = current_user.bookings
   end
