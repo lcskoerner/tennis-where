@@ -12,6 +12,11 @@ class BookingsController < ApplicationController
     @date = params[:date]
   end
 
+  # user_bookings GET    /user_bookings(.:format)  bookings#user_index
+  def user_index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new(tennis_court_booking_params)
     @booking.user = current_user

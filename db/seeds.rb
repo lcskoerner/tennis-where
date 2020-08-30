@@ -10,6 +10,12 @@
 require 'faker'
 require 'open-uri'
 
+puts "Cleaning Database"
+Booking.destroy_all if Rails.env.development?
+TennisCourt.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
+puts "Cleaning Done"
+
 puts "Creating owner"
 owner = User.create(
   email: "owner@tenniscourt.com",
