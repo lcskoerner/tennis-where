@@ -5,9 +5,13 @@
     <%= label_tag "query", "Date:", class: 'input-group-text' %>
     <%= date_field_tag :date,
             params[:date],
-            class: "form-control" %>
+            class: "form-control"
+            %>
     <%= label_tag "query", "Start time:", class: 'input-group-text' %>
-    <%= select_tag(:start_hour, options_for_select((8..20).to_a.map { |e| "#{e}h" })) %>
+    <%= select_tag(:start_hour,
+            options_for_select((8..20).to_a.map { |e| "#{e}h" }),
+            { :class => 'form-control' })
+            %>
     <%= button_tag(type: "submit", class: "btn btn-primary") do %>
       <i class="fas fa-search"></i>
     <% end %>
