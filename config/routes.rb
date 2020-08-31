@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'tennis_courts#index'
   resources :tennis_courts do
+    get "bookings/slots", to: "bookings#slots"
+    get "bookings/confirm", to: "bookings#confirm"
     resources :bookings
   end
 end
