@@ -11,15 +11,15 @@
         </thead>
         <tbody>
           <tr>
-            <td><%= @booking.tennis_court.name %></td>
-            <td><%= @booking.tennis_court.address %></td>
-            <td><%= @booking.date %></td>
-            <td><%= @booking.start_time %>h</td>
+            <td><%= @tennis_court.name %></td>
+            <td><%= @tennis_court.address %></td>
+            <td><%= @date %></td>
+            <td><%= @start_time %>h</td>
           </tr>
         </tbody>
       </table>
       <%= link_to "Confirm",
-        tennis_court_bookings_path(@booking.tennis_court, :start_time => @booking.start_time, :date => @booking.date), method: :post %>
+        tennis_court_bookings_path(@tennis_court, :booking => { :start_time => @start_time, :date => @date }), method: :post %>
     </div>
   </div>
 </div>
