@@ -18,6 +18,9 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def search
+  end
+
   def confirm
     @start_time = params[:booking][:start_time]
     @date = params[:booking][:date]

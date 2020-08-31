@@ -1,6 +1,6 @@
 <h2 class="mt-4">Find & Book your Tennis Court</h2>
 
-<%= form_tag "/tennis_courts", method: :get do %>
+<%= form_tag "/bookings/search", method: :get do %>
   <div class="d-flex mb-4">
     <%= label_tag "query", "Date:", class: 'input-group-text' %>
     <%= date_field_tag :date,
