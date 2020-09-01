@@ -8,7 +8,7 @@
     </div>
     <p class="card-text"><%= @tennis_court.address %></p>
     <p class="card-text"><small class="text-muted"><%= @tennis_court.detail %></small></p>
-    <%= form_tag tennis_court_bookings_path(@tennis_court), method: :get do %>
+    <%= form_tag tennis_court_bookings_slots_path(@tennis_court), method: :get do %>
       <div class="d-flex">
         <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
         <%= date_field_tag :date,

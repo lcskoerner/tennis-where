@@ -21,3 +21,29 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
 }
+
+.mini-slot {
+  color: white;
+  width: 28px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.green {
+  background-color: #15b168;
+}
+
+.green:hover {
+    background-color: #13a15e;
+}
+
+.card a {
+  text-decoration: none;
+}

@@ -9,6 +9,13 @@
 
 require 'faker'
 require 'open-uri'
+require 'json'
+
+puts "Cleaning Database"
+Booking.destroy_all if Rails.env.development?
+TennisCourt.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
+puts "Cleaning Done"
 
 puts "Creating owner"
 owner = User.create(
@@ -36,11 +43,16 @@ player = User.create(
 player.save!
 puts 'User player@tenniscourt.com/123456 created!'
 
-puts 'creating 10 fake tennis courts...'
-10.times do |t|
+puts 'creating tennis courts...'
+
+filepath = 'db/tennis_courts.json'
+serialized_tennis_courts = File.read(filepath)
+tennis_courts = JSON.parse(serialized_tennis_courts)
+
+tennis_courts.each_with_index do |t,i|
   tennis_court = TennisCourt.new(
-    name: Faker::Company.name,
-    address: Faker::Address.street_address,
+    name: t["title"],
+    address: t["address"],
     price_per_hour: rand(10..20),
     detail: Faker::Lorem.paragraph(sentence_count: 2),
     user_id: owner.id
@@ -49,7 +61,7 @@ puts 'creating 10 fake tennis courts...'
   tennis_court.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
   tennis_court.save!
   sleep(10)
-  puts "tennis court #{t + 1} created!"
+  puts "tennis court #{i + 1} created!"
 end
 
 puts 'seed finished!'
