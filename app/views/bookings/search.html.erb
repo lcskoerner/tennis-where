@@ -1,5 +1,4 @@
-
-<h2>Search results for <%= @date %></h2>
+<h2 class="mt-3">Search results for <%= @date %></h2>
 <% @tennis_courts.each do |tennis_court| %>
   <div class="card mb-3">
     <div class="row no-gutters">
@@ -11,16 +10,19 @@
           <h4 class="card-title"><strong><%= tennis_court[:name] %></strong></h4>
           <p class="card-text"><%= tennis_court[:address] %></p>
           <p class="card-text">Available slots:</p>
-          <div class="d-flex">
+          <div class="d-inline-flex">
             <% @slots.each do |slot| %>
               <% if tennis_court[:bookings].include? (slot[:time]) %>
                 <div class="mini-slot gray rounded">
                   <%= slot[:time] %>h
                 </div>
               <% else %>
-                <div class="mini-slot green rounded">
-                  <%= slot[:time] %>h
-                </div>
+                <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
+                                                               :booking => { :start_time => slot[:time], :date => @date }) do %>
+                  <div class="mini-slot green rounded">
+                    <%= slot[:time] %>h
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
           </div>

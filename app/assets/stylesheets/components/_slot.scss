@@ -24,7 +24,7 @@
 
 .mini-slot {
   color: white;
-  width: 180px;
+  width: 28px;
   margin-right: 4px;
   margin-bottom: 4px;
   text-align: center;
@@ -38,4 +38,12 @@
 
 .green {
   background-color: #15b168;
+}
+
+.green:hover {
+    background-color: #13a15e;
+}
+
+.card a {
+  text-decoration: none;
 }
