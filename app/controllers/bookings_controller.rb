@@ -19,6 +19,9 @@ class BookingsController < ApplicationController
   end
 
   def search
+    @date = params[:date].empty? ? Date.today : params[:date]
+    @start_time = params[:start_time]
+
   end
 
   def confirm
