@@ -26,7 +26,6 @@
 
   <hr>
 
-
   <div class="card-body">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Add review</button>
   <!-- Modal: modalPoll -->
@@ -115,19 +114,22 @@
         </div>
       </div>
     </div>
-  </div>
+
 <!-- Modal: modalPoll -->
-  <div class="card-body">
-    <div class="container-1">
-      <div class="avatar-container-1">
+    <div class="user-review-container">
+      <div class="user-review-container-image">
         <%= image_tag "td_profile.jpeg" %>
       </div>
-      <!-- <div class="user-name">
-        <p><strong>Tanguy</strong></p>
-        <p>July 2020</p>
-      </div> -->
+      <div class="user-review-container-name">
+        <div class="user-name">
+        <p>Max</p>
+        </div>
+        <div class="year-pubished">
+        <p>October 2019</p>
+        </div>
+      </div>
     </div>
-    <div class="container-2">
+    <!--<div class="container-2">
       <div class="stars">
       <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
       </div>
@@ -141,7 +143,7 @@
       <div class="avatar-container-1">
         <%= image_tag "td_profile.jpeg" %>
       </div>
-      <!-- <div class="user-name">
+       <div class="user-name">
         <p><strong>Tanguy</strong></p>
         <p>July 2020</p>
       </div> -->
