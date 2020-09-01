@@ -22,6 +22,21 @@ class BookingsController < ApplicationController
     @date = params[:date].empty? ? Date.today : params[:date]
     @start_time = params[:start_time]
 
+    @slots = []
+
+    12.times do |t|
+      @slots << { time: t + 8, occ: false }
+    end
+
+    @tennis_courts = TennisCourt.includes(:bookings)
+    @tennis_courts = @tennis_courts.map do |tennis_court|
+      {
+        name: tennis_court.name,
+        address: tennis_court.address,
+        bookings: tennis_court.bookings.map { |b| b.start_time if b.date == @date },
+        photo: tennis_court.photo.key
+      }
+    end
   end
 
   def confirm

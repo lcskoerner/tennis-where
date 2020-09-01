@@ -1,0 +1,31 @@
+
+<h2>Search results for <%= @date %></h2>
+<% @tennis_courts.each do |tennis_court| %>
+  <div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <%= cl_image_tag tennis_court[:photo], crop: :fill, class: "card-img rounded-left", style: "height: 100%;" %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title"><strong><%= tennis_court[:name] %></strong></h4>
+          <p class="card-text"><%= tennis_court[:address] %></p>
+          <p class="card-text">Available slots:</p>
+          <div class="d-flex">
+            <% @slots.each do |slot| %>
+              <% if tennis_court[:bookings].include? (slot[:time]) %>
+                <div class="mini-slot gray rounded">
+                  <%= slot[:time] %>h
+                </div>
+              <% else %>
+                <div class="mini-slot green rounded">
+                  <%= slot[:time] %>h
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
