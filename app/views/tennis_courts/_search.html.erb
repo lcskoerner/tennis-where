@@ -1,7 +1,15 @@
-<div class="container mb-4 mt-4">
-    <h1> Tennis Where</h1>
-    <h3>Find & Book your Tennis Court</h3>
-    <div class="md-form md-outline input-with-post-icon datepicker">
-      <input placeholder="Select date" type="date" id="example" class="form-control">
-    </div>
+<h2 class="mt-4">Find & Book your Tennis Court</h2>
+
+<%= form_tag "/bookings/search", method: :get do %>
+  <div class="d-flex mb-4">
+    <%= label_tag "query", "Date:", class: 'input-group-text' %>
+    <%= date_field_tag :date,
+            params[:date],
+            class: "form-control"
+            %>
+    <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+      <i class="fas fa-search"></i>
+    <% end %>
   </div>
+<% end %>
+

@@ -18,6 +18,26 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
   end
 
+  def search
+    @date = params[:date].empty? ? Date.today.to_s : params[:date]
+
+    @slots = []
+    12.times do |t|
+      @slots << { time: t + 8, occ: false }
+    end
+
+    @tennis_courts = TennisCourt.includes(:bookings)
+    @tennis_courts = @tennis_courts.map do |tennis_court|
+      {
+        id: tennis_court.id,
+        name: tennis_court.name,
+        address: tennis_court.address,
+        bookings: tennis_court.bookings.map { |b| b.start_time if b.date == @date },
+        photo: tennis_court.photo.key
+      }
+    end
+  end
+
   def confirm
     @start_time = params[:booking][:start_time]
     @date = params[:booking][:date]
