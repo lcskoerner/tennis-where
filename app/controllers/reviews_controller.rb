@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def new
-    @tennis_court = Tennis_court.find(params[:restaurant_id])
+    @tennis_court = Tennis_court.find(params[:tennis_court_id])
     @review = Review.new
   end
 
