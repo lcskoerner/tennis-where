@@ -35,5 +35,25 @@
     text-align: left;
 }
 
+.user-review-container-image > img {
+  display: flex !important;
+  border-radius: 50%;
+  width: 55px;
+}
 
+.user-review-container {
+  display: flex;
+  align-content: start;
+}
 
+.user-review-container-name {
+  display: flex;
+  font-size: 16px;
+  flex-direction: column;
+  align-content: flex-start;
+
+}
+
+p {
+  padding: none;
+}

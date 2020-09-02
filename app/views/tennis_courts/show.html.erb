@@ -26,6 +26,10 @@
 
   <hr>
 
+  <%= simple_form_for [ @tennis_courts, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
   <div class="card-body">
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Add review</button>
   <!-- Modal: modalPoll -->
