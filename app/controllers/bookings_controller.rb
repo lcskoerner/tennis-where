@@ -33,7 +33,17 @@ class BookingsController < ApplicationController
         name: tennis_court.name,
         address: tennis_court.address,
         bookings: tennis_court.bookings.map { |b| b.start_time if b.date == @date },
-        photo: tennis_court.photo.key
+        photo: tennis_court.photo.key,
+        lat: tennis_court.latitude,
+        lng: tennis_court.longitude
+
+      }
+    end
+
+    @markers = @tennis_courts.map do |t|
+      {
+        lat: t[:lat],
+        lng: t[:lng]
       }
     end
   end
