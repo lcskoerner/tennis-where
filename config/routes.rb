@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :tennis_courts do
     get "bookings/slots", to: "bookings#slots"
     get "bookings/confirm", to: "bookings#confirm"
-    resources :bookings
+    resources :bookings do
+      resources :reviews, only: [ :new, :create ]
+    end
   end
 end

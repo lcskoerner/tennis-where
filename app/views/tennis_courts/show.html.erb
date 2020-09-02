@@ -2,6 +2,10 @@
 <%= cl_image_tag @tennis_court.photo.key, crop: :fill %>
   <div class="card-body">
     <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
+    <h5><strong>Reviews</strong> <a href="..">(549 reviews)</a></h5>
+    <div class="stars">
+      <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+    </div>
     <p class="card-text"><%= @tennis_court.address %></p>
     <p class="card-text"><small class="text-muted"><%= @tennis_court.detail %></small></p>
     <%= form_tag tennis_court_bookings_slots_path(@tennis_court), method: :get do %>
@@ -17,5 +21,144 @@
         <% end %>
       </div>
     <% end %>
+  </div>
+  <div>
+
+  <hr>
+
+  <%= simple_form_for [ @tennis_courts, @review ] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
+  <div class="card-body">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalPoll-1">Add review</button>
+  <!-- Modal: modalPoll -->
+    <div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+        <div class="modal-content">
+          <!--Header-->
+          <div class="modal-header">
+            <p class="heading lead">Feedback request
+            </p>
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="white-text">×</span>
+            </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+            <div class="text-center">
+              <i class="far fa-file-alt fa-4x mb-3 animated rotateIn"></i>
+              <p>
+                <strong>Your opinion matters</strong>
+              </p>
+              <p>Share with us your booking experience
+                <strong>Give us your feedback.</strong>
+              </p>
+            </div>
+
+            <hr>
+            <!-- Radio -->
+            <p class="text-center">
+              <strong>Your rating</strong>
+            </p>
+            <div class="form-check mb-4">
+              <input class="form-check-input" name="group1" type="radio" id="radio-179" value="option1" checked>
+              <div class="stars">
+                <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+                <label class="form-check-label" for="radio-179"></label>
+              </div>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" name="group1" type="radio" id="radio-279" value="option2">
+              <div class="stars">
+                <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+                <label class="form-check-label" for="radio-279"></label>
+              </div>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" name="group1" type="radio" id="radio-379" value="option3">
+              <div class="stars">
+                <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+                <label class="form-check-label" for="radio-379"></label>
+              </div>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" name="group1" type="radio" id="radio-479" value="option4">
+              <div class="stars">
+              <%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+                <label class="form-check-label" for="radio-479"></label>
+              </div>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" name="group1" type="radio" id="radio-579" value="option5">
+              <div class="stars">
+                <%= image_tag "stars.png" %>
+                <label class="form-check-label" for="radio-579"></label>
+              </div>
+            </div>
+            <!-- Radio -->
+            <p class="text-center">
+              <strong>Anything you want to share?</strong>
+            </p>
+            <!--Basic textarea-->
+            <div class="md-form">
+              <textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"></textarea>
+              <label for="form79textarea">Your message</label>
+            </div>
+          </div>
+          <!--Footer-->
+          <div class="modal-footer justify-content-center">
+            <a type="button" class="btn btn-primary waves-effect waves-light">Send
+              <i class="fa fa-paper-plane ml-1"></i>
+            </a>
+            <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cancel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal: modalPoll -->
+    <div class="user-review-container">
+      <div class="user-review-container-image">
+        <%= image_tag "td_profile.jpeg" %>
+      </div>
+      <div class="user-review-container-name">
+        <div class="user-name">
+        <p>Max</p>
+        </div>
+        <div class="year-pubished">
+        <p>October 2019</p>
+        </div>
+      </div>
+    </div>
+    <!--<div class="container-2">
+      <div class="stars">
+      <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+      </div>
+      <span>
+        <p>Amazing Tennis court...</p>
+      </span>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="container-1">
+      <div class="avatar-container-1">
+        <%= image_tag "td_profile.jpeg" %>
+      </div>
+       <div class="user-name">
+        <p><strong>Tanguy</strong></p>
+        <p>July 2020</p>
+      </div> -->
+    </div>
+    <div class="container-2">
+      <div class="stars">
+      <%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %><%= image_tag "stars.png" %>
+      </div>
+      <span>
+        <p>Amazing Tennis court...</p>
+      </span>
+    </div>
   </div>
 </div>
