@@ -8,7 +8,6 @@ const buildMap = () => {
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10'
   });
-  console.log('map created');
 };
 
 const addMarkersToMap = (map, markers) => {
