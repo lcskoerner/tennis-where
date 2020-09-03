@@ -1,20 +1,22 @@
-<div class="card mt-5">
-  <div class="card-body">
-    <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-sm-8 text-center">
-            <h3 class="card-title">Select your slot:</h3>
-            <div class="d-flex flex-wrap justify-content-center pt-4">
-              <% @slots.each do |slot| %>
-                <div class="slot">
-                  <%= link_to tennis_court_bookings_confirm_path(:booking => { :start_time => slot, :date => @date }) do %>
-                    <%= slot %>h - <%= slot + 1 %>h
-                  <% end %>
-                </div>
-              <% end %>
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-sm-8 text-center">
+              <h3 class="card-title">Select your slot:</h3>
+              <div class="d-flex flex-wrap justify-content-center pt-4">
+                <% @slots.each do |slot| %>
+                  <div class="slot">
+                    <%= link_to tennis_court_bookings_confirm_path(:booking => { :start_time => slot, :date => @date }) do %>
+                      <%= slot %>h - <%= slot + 1 %>h
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
 </div>
