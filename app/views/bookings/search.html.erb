@@ -1,32 +1,51 @@
-<h2 class="ml-3 mt-3">Search results for <%= @date %></h2>
+<h4 class="ml-3 mt-3">Your search results:</h4>
+<%= form_tag "/bookings/search", method: :get do %>
+    <div class="d-flex mb-4 ml-3 mr-3">
+      <%= date_field_tag :date,
+              params[:date],
+              class: "form-control",
+              value: Date.today.to_s
+              %>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+<% end %>
 <div class="main-container ml-3">
   <div class="search-cards">
     <% @tennis_courts.each do |tennis_court| %>
       <div class="card mb-3">
         <div class="row no-gutters">
-          <div class="col-md-4">
-            <%= cl_image_tag tennis_court[:photo], crop: :fill, class: "card-img rounded-left", style: "height: 100%;" %>
+          <div class="col-md-5">
+            <div class="card-category" style="background-image: url('<%= cl_image_path tennis_court[:photo], height: 300, width: 400, crop: :fill %>')">
+              ⭐️⭐️⭐️⭐️⭐️
+            </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <div class="card-body">
-              <h4 class="card-title"><strong><%= tennis_court[:name] %></strong></h4>
-              <p class="card-text"><%= tennis_court[:address] %></p>
-              <p class="card-text">Available slots:</p>
-              <div class="d-inline-flex flex-wrap">
-                <% @slots.each do |slot| %>
-                  <% if tennis_court[:bookings].include? (slot[:time]) %>
-                    <div class="mini-slot gray rounded">
-                      <%= slot[:time] %>h
-                    </div>
-                  <% else %>
-                    <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
-                                                                   :booking => { :start_time => slot[:time], :date => @date }) do %>
-                      <div class="mini-slot green rounded">
-                        <%= slot[:time] %>h
+              <div class="d-flex justify-content-between">
+                <h4 class="card-title"><%= tennis_court[:name] %></h4>
+                <h4 class="card-title"><strong>$<%= tennis_court[:price_per_hour] %></strong></h4>
+              </div>
+                <p class="card-text"><small><%= tennis_court[:address] %></small></p>
+              <div class="align-items-end">
+                <p class="card-text mb-0">Available slots:</p>
+                <div class="d-inline-flex flex-wrap">
+                  <% @slots.each do |slot| %>
+                    <% if tennis_court[:bookings].include? (slot[:time]) %>
+                      <div class="mini-slot gray rounded">
+                        <strong><%= slot[:time] %>h</strong>
                       </div>
+                    <% else %>
+                      <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
+                                                                     :booking => { :start_time => slot[:time], :date => @date }) do %>
+                        <div class="mini-slot purple rounded">
+                          <strong><%= slot[:time] %>h</strong>
+                        </div>
+                      <% end %>
                     <% end %>
                   <% end %>
-                <% end %>
+                </div>
               </div>
             </div>
           </div>

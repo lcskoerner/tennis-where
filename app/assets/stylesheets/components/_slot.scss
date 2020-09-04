@@ -33,17 +33,23 @@
 }
 
 .gray {
+  color: white;
   background-color: gray;
 }
 
-.green {
-  background-color: #15b168;
+.purple {
+  color: white;
+  background-color: #4EBA2D;
 }
 
-.green:hover {
-    background-color: #13a15e;
+.purple:hover {
+
 }
 
 .card a {
-  text-decoration: none;
+  color: #4EBA2D;
+}
+
+.btn-primary{
+  color: white !important;
 }

@@ -36,6 +36,7 @@ class BookingsController < ApplicationController
         photo: tennis_court.photo.key,
         lat: tennis_court.latitude,
         lng: tennis_court.longitude,
+        price_per_hour: tennis_court.price_per_hour,
         infoWindow: render_to_string(partial: "info_window", locals: { tennis_court: tennis_court })
       }
     end
