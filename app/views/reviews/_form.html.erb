@@ -1,8 +1,8 @@
 <div class="submit-review">
   <%= simple_form_for([ @tennis_court, @review ], remote:true ) do |f| %>
-  <label for="review"><strong>How was your experience?</label></strong><br>
+  <label for="review"><strong><h4>How was your experience?</h4></strong></label><br>
     <%= f.input :rating, collection: [5,4,3,2,1] %>
-    <%= f.input :content, label: "Message", placeholder:"Please enter your comment here" %>
+    <%= f.input :content, label: "Message", placeholder:"(max 60 characters)" %>
     <%= f.submit "Submit", class: "btn btn-primary" %> <br><br>
  <% end %>
 </div>

@@ -62,7 +62,7 @@ class BookingsController < ApplicationController
     @booking.tennis_court = @tennis_court
     @booking.user = current_user
     @booking.save!
-
+    flash[:notice] = "Your booking has been successfully confirmed!"
     redirect_to tennis_court_path(@booking.tennis_court)
   end
 

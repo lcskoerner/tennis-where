@@ -1,23 +1,26 @@
-<div class="card mb-3 mt-5">
-<%= cl_image_tag @tennis_court.photo.key, crop: :fill %>
-  <div class="card-body">
-    <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
-    <p class="card-text"><%= @tennis_court.address %></p>
-    <%= form_tag tennis_court_bookings_slots_path(@tennis_court), method: :get do %>
-      <div class="d-flex">
-        <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
-        <%= date_field_tag :date,
-          params[:date],
-          class: "form-control",
-          placeholder: "Find a spot"
-        %>
-        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-          <i class="fas fa-search"></i>
-        <% end %>
-      </div>
-    <% end %>
-       <div class="listing-reviews">
-        <%= render 'review' %>
-      </div>
+<div class="container">
+  <div class="card mb-3 mt-5">
+  <%= cl_image_tag @tennis_court.photo.key, crop: :fill %>
+    <div class="card-body">
+      <h4 class="card-title"><strong><%= @tennis_court.name %></strong></h4>
+      <p class="card-text"><%= @tennis_court.address %></p>
+      <%= form_tag tennis_court_bookings_slots_path(@tennis_court), method: :get do %>
+        <div class="d-flex">
+          <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
+          <%= date_field_tag :date,
+            params[:date],
+            value: Date.today.to_s,
+            class: "form-control",
+            placeholder: "Find a spot"
+          %>
+          <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </div>
+      <% end %>
+         <div class="listing-reviews">
+          <%= render 'review' %>
+        </div>
+    </div>
   </div>
 </div>
