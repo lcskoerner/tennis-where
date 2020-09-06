@@ -3,7 +3,6 @@
   <div class="card-body">
     <h5 class="card-title"><strong><%= @tennis_court.name %></strong></h5>
     <p class="card-text"><%= @tennis_court.address %></p>
-    <p class="card-text"><small class="text-muted"><%= @tennis_court.detail %></small></p>
     <%= form_tag tennis_court_bookings_slots_path(@tennis_court), method: :get do %>
       <div class="d-flex">
         <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
@@ -21,5 +20,5 @@
         <%= render 'review' %>
       </div>
   </div>
- 
+
 </div>
