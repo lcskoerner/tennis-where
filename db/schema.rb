@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_31_003622) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
     t.text "content"
     t.bigint "user_id", null: false
     t.bigint "tennis_court_id", null: false

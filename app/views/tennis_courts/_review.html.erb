@@ -1,0 +1,44 @@
+<!-- Review header -->
+<div class="listing-title">
+    <% if @tennis_court.reviews.present? %>
+      <h4><strong><%= @tennis_court.reviews.count %> Reviews</strong></h4>
+    <% else %>
+      <h4><strong>Reviews</strong></h4>
+    <% end %>
+</div>
+
+<!-- Review content -->
+<div class="review-box" style="border-bottom: solid 1px rgb(220, 224, 223)">
+  <% if @tennis_court.reviews.present? %>
+    <ul>
+    <% @tennis_court.reviews.each do |review| %>
+       <%= image_tag "gustavo-kuerten.jpg" %>
+      <li>
+        <% if review.user.first_name.blank? %>
+          <p><strong>Anonymous</strong></p>
+        <% else %>
+          <p><strong><%= review.user.first_name %></strong></p>
+        <% end %>
+
+      <p>Comment: <%= review.content %></p>
+      <p>Post on: <%= review.created_at.strftime("%Y-%m-%d") %></p>
+
+        <div class="d-flex">
+          <% (1..5).to_a.each do |el| %>
+            <% if el <= review.rating %>
+              <i class="fas fa-star" style="color: #ffb400;"></i>
+            <% else %>
+              <i class="fas fa-star" style="color: #ccc"></i>
+            <% end %>
+          <% end %>
+        </div>
+    <% end %>
+  <% else %>
+    <p>There is no review for this tennis_court yet</p>
+    </li>
+  <% end %>
+  </ul>
+</div><br>
+
+
+<%= render 'reviews/form' %>
