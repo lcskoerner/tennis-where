@@ -14,7 +14,8 @@
 <div class="main-container ml-3">
   <div class="search-cards">
     <% @tennis_courts.each do |tennis_court| %>
-      <div class="card mb-3">
+      <div class="card mb-3 search-result">
+
         <div class="row no-gutters">
           <div class="col-md-5">
             <div class="card-category" style="background-image: url('<%= cl_image_path tennis_court[:photo], height: 300, width: 400, crop: :fill %>')">
@@ -24,7 +25,9 @@
           <div class="col-md-7">
             <div class="card-body">
               <div class="d-flex justify-content-between">
-                <h4 class="card-title"><%= tennis_court[:name] %></h4>
+                <%= link_to tennis_court_path(tennis_court) do %>
+                  <h4 class="card-title name-link"><%= tennis_court[:name] %></h4>
+                <% end %>
                 <h4 class="card-title"><strong>$<%= tennis_court[:price_per_hour] %></strong></h4>
               </div>
                 <p class="card-text"><small><%= tennis_court[:address] %></small></p>
@@ -38,7 +41,8 @@
                       </div>
                     <% else %>
                       <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
-                                                                     :booking => { :start_time => slot[:time], :date => @date }) do %>
+                          :booking => { :start_time => slot[:time], :date => @date }) do
+                          %>
                         <div class="mini-slot purple rounded">
                           <strong><%= slot[:time] %>h</strong>
                         </div>
