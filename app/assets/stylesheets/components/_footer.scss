@@ -1,5 +1,5 @@
 .footer {
-  background: #145374;
+  background: #008E53;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7,22 +7,33 @@
   height: 150px;
   padding: 0px 50px;
   a {
+    color: white;
     text-decoration: none;
   }
   a:hover {
-    color: #f05f43;
+    color: #E0DC00;
   }
 }
 
 .footer-links a {
   font-size: 24px;
   padding: 0px 10px;
+  color: white;
 }
 
 .footer-links a:hover {
 }
 
 .separator {
-  color: #ee6f57;
+  color: white;
   font-size: 12px;
+}
+
+.landing {
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
 }
