@@ -9,6 +9,7 @@
           <%= label_tag "query", "Check availability:", class: 'input-group-text' %>
           <%= date_field_tag :date,
             params[:date],
+            value: Date.today.to_s,
             class: "form-control",
             placeholder: "Find a spot"
           %>
