@@ -19,7 +19,6 @@
         <div class="row no-gutters">
           <div class="col-md-5">
             <div class="card-category" style="background-image: url('<%= cl_image_path tennis_court[:photo], height: 300, width: 400, crop: :fill %>')">
-              ⭐️⭐️⭐️⭐️⭐️
             </div>
           </div>
           <div class="col-md-7">
@@ -42,7 +41,7 @@
                     <% else %>
                         <div class="mini-slot purple rounded">
                           <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
-                              :booking => { :start_time => slot[:time], :date => @date }), style: "color: white" do
+                              :booking => { :start_time => slot[:time], :date => @date }), style: "color: white;" do
                               %>
                               <strong><%= slot[:time] %>h</strong>
                           <% end %>
