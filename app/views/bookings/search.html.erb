@@ -40,13 +40,13 @@
                         <strong><%= slot[:time] %>h</strong>
                       </div>
                     <% else %>
-                      <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
-                          :booking => { :start_time => slot[:time], :date => @date }) do
-                          %>
                         <div class="mini-slot purple rounded">
-                          <strong><%= slot[:time] %>h</strong>
+                          <%= link_to tennis_court_bookings_confirm_path(tennis_court[:id],
+                              :booking => { :start_time => slot[:time], :date => @date }), style: "color: white" do
+                              %>
+                              <strong><%= slot[:time] %>h</strong>
+                          <% end %>
                         </div>
-                      <% end %>
                     <% end %>
                   <% end %>
                 </div>
