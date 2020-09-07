@@ -43,6 +43,60 @@ player = User.create(
 player.save!
 puts 'User player@tenniscourt.com/123456 created!'
 
+puts "Creating Lucas"
+player = User.create(
+  email: "lucas@tenniscourt.com",
+  password: 123456,
+  first_name: "Lucas",
+  last_name: "Nadal",
+  owner: false,
+  phone_number: 5143454556
+)
+
+player.save!
+puts 'User lucas@tenniscourt.com/123456 created!'
+
+puts "Creating Mohamed"
+player = User.create(
+  email: "mohamed@tenniscourt.com",
+  password: 123456,
+  first_name: "Mohamed",
+  last_name: "Murray",
+  owner: false,
+  phone_number: 5142948775
+)
+
+player.save!
+puts 'User mohamed@tenniscourt.com/123456 created!'
+
+puts "Creating Romain"
+player = User.create(
+  email: "romain@tenniscourt.com",
+  password: 123456,
+  first_name: "Romain",
+  last_name: "Djoko",
+  owner: false,
+  phone_number: 5142943459
+)
+
+player.save!
+puts 'User romain@tenniscourt.com/123456 created!'
+
+puts "Creating Tanguy"
+player = User.create(
+  email: "tanguy@tenniscourt.com",
+  password: 123456,
+  first_name: "Tanguy",
+  last_name: "Federer",
+  owner: false,
+  phone_number: 5149583755
+)
+
+player.save!
+puts 'User tanguy@tenniscourt.com/123456 created!'
+
+
+
 puts 'creating tennis courts...'
 
 filepath = 'db/tennis_courts.json'
