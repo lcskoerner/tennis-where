@@ -5,6 +5,7 @@ require 'json'
 
 puts "Cleaning Database"
 Booking.destroy_all if Rails.env.development?
+Review.destroy_all if Rails.env.development?
 TennisCourt.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 puts "Cleaning Done"
@@ -20,11 +21,11 @@ owner = User.create(
 )
 
 owner.save!
-puts 'User owner@tenniscourt.com/123456 created!'
+puts 'User owner@tenniswhere.com/123456 created!'
 
 puts "Creating player"
 player = User.create(
-  email: "player@tenniscourt.com",
+  email: "player@tenniswhere.com",
   password: 123456,
   first_name: "Gustavo",
   last_name: "Kuster",
@@ -33,11 +34,11 @@ player = User.create(
 )
 
 player.save!
-puts 'User player@tenniscourt.com/123456 created!'
+puts 'User player@tenniswhere.com/123456 created!'
 
 puts "Creating Lucas"
 player = User.create(
-  email: "lucas@tenniscourt.com",
+  email: "lucas@tenniswhere.com",
   password: 123456,
   first_name: "Lucas",
   last_name: "Nadal",
@@ -48,14 +49,16 @@ player = User.create(
 url = 'https://api.github.com/users/lcskoerner'
 user_serialized = open(url).read
 user = JSON.parse(user_serialized)
-file = user['avatar_url']
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
 
 player.save!
-puts 'User lucas@tenniscourt.com/123456 created!'
+puts 'User lucas@tenniswhere.com/123456 created!'
 
 puts "Creating Mohamed"
 player = User.create(
-  email: "mohamed@tenniscourt.com",
+  email: "mohamed@tenniswhere.com",
   password: 123456,
   first_name: "Mohamed",
   last_name: "Murray",
@@ -66,14 +69,16 @@ player = User.create(
 url = 'https://api.github.com/users/MohamedDiarra'
 user_serialized = open(url).read
 user = JSON.parse(user_serialized)
-file = user['avatar_url']
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
 
 player.save!
-puts 'User mohamed@tenniscourt.com/123456 created!'
+puts 'User mohamed@tenniswhere.com/123456 created!'
 
 puts "Creating Romain"
 player = User.create(
-  email: "romain@tenniscourt.com",
+  email: "romain@tenniswhere.com",
   password: 123456,
   first_name: "Romain",
   last_name: "Djoko",
@@ -84,14 +89,16 @@ player = User.create(
 url = 'https://api.github.com/users/romainbazeler'
 user_serialized = open(url).read
 user = JSON.parse(user_serialized)
-file = user['avatar_url']
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
 
 player.save!
-puts 'User romain@tenniscourt.com/123456 created!'
+puts 'User romain@tenniswhere.com/123456 created!'
 
 puts "Creating Tanguy"
 player = User.create(
-  email: "tanguy@tenniscourt.com",
+  email: "tanguy@tenniswhere.com",
   password: 123456,
   first_name: "Tanguy",
   last_name: "Federer",
@@ -102,12 +109,12 @@ player = User.create(
 url = 'https://api.github.com/users/tanguydamois'
 user_serialized = open(url).read
 user = JSON.parse(user_serialized)
-file = user['avatar_url']
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
 
 player.save!
-puts 'User tanguy@tenniscourt.com/123456 created!'
-
-
+puts 'User tanguy@tenniswhere.com/123456 created!'
 
 puts 'creating tennis courts...'
 
@@ -131,3 +138,6 @@ tennis_courts.each_with_index do |t,i|
 end
 
 puts 'seed finished!'
+
+
+
