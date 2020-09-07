@@ -1,7 +1,7 @@
 .slot {
-  background-color: #15b168;
-  padding: 40px;
-  width: 180px;
+  background-color: #ED6E45;
+  padding: 8px;
+  width: 72px;
   border: 1px solid #dedede;
   color: white;
   margin-right: 10px;
@@ -33,17 +33,15 @@
 }
 
 .gray {
+  color: white;
   background-color: gray;
 }
 
-.green {
-  background-color: #15b168;
+.purple {
+  color: white;
+  background-color: #4EBA2D;
 }
 
-.green:hover {
-    background-color: #13a15e;
-}
-
-.card a {
-  text-decoration: none;
+.purple:hover {
+  text-decoration: underline;
 }

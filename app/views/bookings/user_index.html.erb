@@ -1,25 +1,27 @@
-<div class="card mt-5">
-  <div class="card-body">
-    <div class="container">
-      <h5 class="card-title">Your bookings</h5>
-      <table class="table">
-        <thead>
-          <th scope="col">Tennis Court</th>
-          <th scope="col">Address</th>
-          <th scope="col">Date</th>
-          <th scope="col">Start Time</th>
-        </thead>
-        <tbody>
-            <% @bookings.each do |booking| %>
-          <tr>
-              <td><%= booking.tennis_court.name %></td>
-              <td><%= booking.tennis_court.address %></td>
-              <td><%= booking.date %></td>
-              <td><%= booking.start_time %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="container">
+        <h5 class="card-title">Your bookings</h5>
+        <table class="table">
+          <thead>
+            <th scope="col">Tennis Court</th>
+            <th scope="col">Address</th>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+          </thead>
+          <tbody>
+              <% @bookings.each do |booking| %>
+            <tr>
+                <td><%= booking.tennis_court.name %></td>
+                <td><%= booking.tennis_court.address %></td>
+                <td><%= booking.date %></td>
+                <td><%= booking.start_time %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

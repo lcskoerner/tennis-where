@@ -1,25 +1,27 @@
-<div class="card mt-5">
-  <div class="card-body">
-    <div class="container">
-      <h5 class="card-title">Confirm your appointment:</h5>
-      <table class="table">
-        <thead>
-          <th scope="col">Tennis Court</th>
-          <th scope="col">Address</th>
-          <th scope="col">Date</th>
-          <th scope="col">Start Time</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= @tennis_court.name %></td>
-            <td><%= @tennis_court.address %></td>
-            <td><%= @date %></td>
-            <td><%= @start_time %>h</td>
-          </tr>
-        </tbody>
-      </table>
-      <%= link_to "Confirm",
-        tennis_court_bookings_path(@tennis_court, :booking => { :start_time => @start_time, :date => @date }), method: :post %>
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <div class="container">
+        <h5 class="card-title">Your booking details:</h5>
+        <table class="table">
+          <thead>
+            <th scope="col">Tennis Court</th>
+            <th scope="col">Address</th>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @tennis_court.name %></td>
+              <td><%= @tennis_court.address %></td>
+              <td><%= @date %></td>
+              <td><%= @start_time %>h</td>
+            </tr>
+          </tbody>
+        </table>
+        <%= link_to "Confirm",
+          tennis_court_bookings_path(@tennis_court, :booking => { :start_time => @start_time, :date => @date }), method: :post %>
+      </div>
     </div>
   </div>
 </div>

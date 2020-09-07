@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: url(<%= asset_url("banner.jpg") %>);">
+  <div class="container">
+    <h1>Ace your <strong>skills</strong> against your <strong>partners</strong>!</h1>
+    <p>Be at the top of your game. Book now:</p>
+    <%= form_tag "/bookings/search", method: :get do %>
+    <div class="d-flex mb-4">
+      <%= date_field_tag :date,
+              params[:date],
+              class: "form-control",
+              value: Date.today.to_s
+              %>
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
