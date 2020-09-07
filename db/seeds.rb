@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#
 
 require 'faker'
 require 'open-uri'
@@ -53,6 +45,11 @@ player = User.create(
   phone_number: 5143454556
 )
 
+url = 'https://api.github.com/users/lcskoerner'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file = user['avatar_url']
+
 player.save!
 puts 'User lucas@tenniscourt.com/123456 created!'
 
@@ -65,6 +62,11 @@ player = User.create(
   owner: false,
   phone_number: 5142948775
 )
+
+url = 'https://api.github.com/users/MohamedDiarra'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file = user['avatar_url']
 
 player.save!
 puts 'User mohamed@tenniscourt.com/123456 created!'
@@ -79,6 +81,11 @@ player = User.create(
   phone_number: 5142943459
 )
 
+url = 'https://api.github.com/users/romainbazeler'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file = user['avatar_url']
+
 player.save!
 puts 'User romain@tenniscourt.com/123456 created!'
 
@@ -91,6 +98,11 @@ player = User.create(
   owner: false,
   phone_number: 5149583755
 )
+
+url = 'https://api.github.com/users/tanguydamois'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file = user['avatar_url']
 
 player.save!
 puts 'User tanguy@tenniscourt.com/123456 created!'
