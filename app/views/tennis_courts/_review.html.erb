@@ -16,7 +16,7 @@
           <%= image_tag "avatar-anonymous.png", class: "avatar" %>
           <strong>Anonymous</strong>
         <% else %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar" %>
+          <%= cl_image_tag review.user.photo.key, class: "avatar" %>
           <strong><%= review.user.first_name %></strong>
         <% end %>
       </div>
