@@ -29,7 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
-import '../stylesheets/application';
+import '../../assets/stylesheets/application.scss';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
