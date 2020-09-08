@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-#
 
 require 'faker'
 require 'open-uri'
@@ -13,6 +5,7 @@ require 'json'
 
 puts "Cleaning Database"
 Booking.destroy_all if Rails.env.development?
+Review.destroy_all if Rails.env.development?
 TennisCourt.destroy_all if Rails.env.development?
 User.destroy_all if Rails.env.development?
 puts "Cleaning Done"
@@ -28,11 +21,11 @@ owner = User.create(
 )
 
 owner.save!
-puts 'User owner@tenniscourt.com/123456 created!'
+puts 'User owner@tenniswhere.com/123456 created!'
 
 puts "Creating player"
 player = User.create(
-  email: "player@tenniscourt.com",
+  email: "player@tenniswhere.com",
   password: 123456,
   first_name: "Gustavo",
   last_name: "Kuster",
@@ -41,7 +34,87 @@ player = User.create(
 )
 
 player.save!
-puts 'User player@tenniscourt.com/123456 created!'
+puts 'User player@tenniswhere.com/123456 created!'
+
+puts "Creating Lucas"
+player = User.create(
+  email: "lucas@tenniswhere.com",
+  password: 123456,
+  first_name: "Lucas",
+  last_name: "Nadal",
+  owner: false,
+  phone_number: 5143454556
+)
+
+url = 'https://api.github.com/users/lcskoerner'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
+
+player.save!
+puts 'User lucas@tenniswhere.com/123456 created!'
+
+puts "Creating Mohamed"
+player = User.create(
+  email: "mohamed@tenniswhere.com",
+  password: 123456,
+  first_name: "Mohamed",
+  last_name: "Murray",
+  owner: false,
+  phone_number: 5142948775
+)
+
+url = 'https://api.github.com/users/MohamedDiarra'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
+
+player.save!
+puts 'User mohamed@tenniswhere.com/123456 created!'
+
+puts "Creating Romain"
+player = User.create(
+  email: "romain@tenniswhere.com",
+  password: 123456,
+  first_name: "Romain",
+  last_name: "Djoko",
+  owner: false,
+  phone_number: 5142943459
+)
+
+url = 'https://api.github.com/users/romainbazeler'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
+
+player.save!
+puts 'User romain@tenniswhere.com/123456 created!'
+
+puts "Creating Tanguy"
+player = User.create(
+  email: "tanguy@tenniswhere.com",
+  password: 123456,
+  first_name: "Tanguy",
+  last_name: "Federer",
+  owner: false,
+  phone_number: 5149583755
+)
+
+url = 'https://api.github.com/users/tanguydamois'
+user_serialized = open(url).read
+user = JSON.parse(user_serialized)
+file_name = user['avatar_url']
+file = URI.open(file_name)
+player.photo.attach(io: file, filename: SecureRandom.hex, content_type: 'image/jpeg')
+
+player.save!
+puts 'User tanguy@tenniswhere.com/123456 created!'
 
 puts 'creating tennis courts...'
 
@@ -65,3 +138,6 @@ tennis_courts.each_with_index do |t,i|
 end
 
 puts 'seed finished!'
+
+
+
