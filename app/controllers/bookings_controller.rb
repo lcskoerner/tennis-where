@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
       @bookings = Booking.all
     end
 
-    all_hours = (8..20).to_a
+    all_hours = (8..19).to_a
     occ_hours = @bookings.map(&:start_time)
     @slots = all_hours - occ_hours
     @date = params[:date]

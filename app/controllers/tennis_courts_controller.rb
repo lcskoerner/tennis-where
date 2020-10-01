@@ -15,8 +15,8 @@ class TennisCourtsController < ApplicationController
   end
 
   def show
-    @review = Review.new
     @tennis_court = TennisCourt.find(params[:id])
+    @review = Review.new
   end
 
   def edit
